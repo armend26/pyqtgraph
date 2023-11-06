@@ -13,8 +13,10 @@ class CanvasManager(QtCore.QObject):
     def __init__(self):
         if CanvasManager.SINGLETON is not None:
             raise Exception("Can only create one canvas manager.")
-        CanvasManager.SINGLETON = self
+         
         QtCore.QObject.__init__(self)
+        CanvasManager.SINGLETON = self 
+        
         self.canvases = weakref.WeakValueDictionary()
 
     @classmethod
